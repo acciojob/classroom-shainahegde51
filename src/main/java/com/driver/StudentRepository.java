@@ -66,7 +66,9 @@ public class StudentRepository {
 
     public void deleteAllTeachers(){
         for(String teacherName:studentTeacherPair.keySet()){
-            deleteTeacherByName(teacherName);
+            if(studentTeacherPair.containsKey(teacherName)) {
+                deleteTeacherByName(teacherName);
+            }
         }
     }
 
